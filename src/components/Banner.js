@@ -56,7 +56,7 @@ export const Banner = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
-                  <h1>{`Hi! I'm Emre `} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                  <h1>{`Hi! I'm Emre `} <span className="txt-rotate" dataPeriod="500" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
                   <p>My passion for software development drives me to create impactful and innovative solutions that help users. With in-depth knowledge of both front-end and back-end technologies, I design and develop web applications and dynamic user interfaces. I am constantly exploring new technologies and enjoy integrating them into my projects.
 
                     This portfolio website showcases the projects I’ve worked on and the skills I've developed. Each project reflects my commitment to delivering technical expertise and user-centered solutions. I am dedicated to building web applications that are both aesthetically pleasing and highly functional.

@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import githublogo from '../assets/img/github-mark.png';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import { HashLink } from 'react-router-hash-link';
 import {BrowserRouter as Router} from "react-router-dom";
-
+import logovid from "../assets/vid/logovid.gif";
 export const MyNavbar = () => {
 
   const [activeLink, setActiveLink] = useState('home');
@@ -35,7 +34,7 @@ export const MyNavbar = () => {
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo} alt="Logo" />
+            <img className="logo" src={logovid} alt="Logo" style={{ width: "27vh", height: "auto" }}  />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>

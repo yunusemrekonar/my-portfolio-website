@@ -96,7 +96,7 @@ export const Banner = () => {
           name="keywords"
           content="Web Developer, Full Stack Developer, UI/UX Designer, Social Media Manager, Mobile Development, Yunus Emre Konar"
         />
-        <link rel="canonical" href="https://yourwebsite.com" />
+        <link rel="canonical" href="https://konarworks.com" />
       </Helmet>
       <section className="banner" id="home">
         <Container>
@@ -137,7 +137,7 @@ export const Banner = () => {
                       success. Explore my website, and let’s bring your
                       projects to life together!
                     </p>
-                    <button onClick={scrollToContact}>
+                    <button onClick={scrollToContact} className="button-banner">
                       Let’s Connect <ArrowRightCircle size={25} />
                     </button>
                   </div>
@@ -154,7 +154,7 @@ export const Banner = () => {
                         : ""
                     }
                   >
-                    <img src={headerImg} alt="Header Img" />
+                    <img src={headerImg} alt="Header Img" className="header-img" />
                   </div>
                 )}
               </TrackVisibility>

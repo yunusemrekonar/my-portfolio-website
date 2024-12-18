@@ -260,6 +260,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  max-width: 100%; 
 }
 .banner .tagline {
   font-weight: 700;
@@ -667,6 +668,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
   /************ Banner Css ************/
   .banner {
+    background-attachment: scroll; /* Mobilde sabit arka plan yerine kaydırılabilir arka plan */
+    background-size: 150% auto; /* Arka planın mobilde küçülmesini sağlar */
     max-width: 100%;
     padding: 180px 0 100px 0;
     background-position: center;

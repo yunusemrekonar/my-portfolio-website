@@ -34,7 +34,7 @@ export const Banner = () => {
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    const triggerHeight = 200;
+    const triggerHeight = 100;
     setIsInScrollRange(scrollY <= triggerHeight);
   };
 

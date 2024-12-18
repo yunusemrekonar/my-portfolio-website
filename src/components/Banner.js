@@ -11,10 +11,9 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(100); 
   const [index, setIndex] = useState(1);
-  const [isInScrollRange, setIsInScrollRange] = useState(false); 
+  const [isInScrollRange, setIsInScrollRange] = useState(true); // Varsayılan olarak true
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
   const period = 1500; 
-
 
   useEffect(() => {
     const handleScroll = () => {

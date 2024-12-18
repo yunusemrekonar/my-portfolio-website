@@ -235,6 +235,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
+  height: 100vh;
   padding: 180px 0 200px 0;
   background: url('./assets/img/banner-bg.png');
   background-position: top center;
@@ -301,7 +302,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Skills Css ************/
 .skill {
-  margin-top: 20vh !important;
   padding: 0 0 50px 0;
   position: relative;
 }
@@ -628,7 +628,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
   /************ Banner Css ************/
   .banner {
-    padding: 180px 0 60px 0;
+    padding: 180px 0 100px 0;
     background-position: center;
   }
   .banner h1 {

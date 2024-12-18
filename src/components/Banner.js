@@ -11,14 +11,28 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(100); 
   const [index, setIndex] = useState(1);
+  const [isInScrollRange, setIsInScrollRange] = useState(false); 
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
   const period = 1500; 
 
-  useEffect(() => {
-    const ticker = setInterval(() => tick(), delta);
 
-    return () => clearInterval(ticker);
-  }, [text, delta]);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY; 
+      const triggerHeight = 200; 
+      setIsInScrollRange(scrollY <= triggerHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isInScrollRange) {
+      const ticker = setInterval(() => tick(), delta);
+      return () => clearInterval(ticker);
+    }
+  }, [text, delta, isInScrollRange]);
 
   const tick = () => {
     const currentText = toRotate[loopNum % toRotate.length];
@@ -56,7 +70,7 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) => (
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                <div className={isVisible && isInScrollRange ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>
                     Hi! I'm Emre{" "}
@@ -75,7 +89,7 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) => (
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                <div className={isVisible && isInScrollRange ? "animate__animated animate__zoomIn" : ""}>
                   <img src={headerImg} alt="Header Img" />
                 </div>
               )}

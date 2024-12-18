@@ -1,6 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+:target {
+  scroll-margin-top: 15vh;
+}
 /************ Custom Font ************/
 @font-face {
 	font-family: Centra;
@@ -85,7 +88,7 @@ p.danger {
 }
 /************ Navbar Css ************/
 .vvd {
-  border-radius: 5vh;  
+  border-radius: 3vh;  
   background-color: #4CAF50;  
   color: white;  
   border: none;  
@@ -153,7 +156,7 @@ span.navbar-text {
     background-color: #ffffff;
     border-radius: 50%;
     transform: scale(0);
-	transition: 0.3s ease-in-out;
+	  transition: 0.3s ease-in-out;
 }
 .social-icon a:hover::before {
     transform: scale(1);
@@ -167,7 +170,7 @@ span.navbar-text {
 	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
 }
 .navbar-text button {
-  border-radius: 5vh;  
+  border-radius: 3vh;  
   font-weight: 700;
   color: #fff;
   border: 1px solid #fff;
@@ -180,9 +183,10 @@ span.navbar-text {
 }
 .navbar-text button span {
   z-index: 1;
+  border-radius: 3vh;
 }
 .navbar-text button::before {
-  border-radius: 5vh;  
+  border-radius: 3vh;  
   content: "";
   width: 0%;
   height: 100%;
@@ -194,11 +198,11 @@ span.navbar-text {
   transition: 0.3s ease-in-out;
 }
 .navbar-text button:hover {
-  border-radius: 5vh;  
+  border-radius: 3vh;  
   color: #121212;
 }
 .navbar-text button:hover::before {
-  border-radius: 5vh;  
+  border-radius: 3vh;  
 	content: "";
 	width: 100%;
 	height: 100%;
@@ -206,9 +210,9 @@ span.navbar-text {
 }
 nav.navbar .navbar-toggler:active,
 nav.navbar .navbar-toggler:focus {
-  border-radius: 5vh;  
+  border-radius: 3vh;  
 	outline: none;
-    box-shadow: none;
+  box-shadow: none;
 }
 nav.navbar .navbar-toggler-icon {
   width: 24px;
@@ -218,8 +222,10 @@ nav.navbar .navbar-toggler-icon {
   border-bottom: 2px solid #fff;
   transition: all 300ms linear;
   top: -2px;
+  border-radius: 3vh;
 }
 nav.navbar .navbar-toggler-icon:focus {
+  border-radius: 3vh;
 	border-bottom: 2px solid #fff;
 }
 nav.navbar .navbar-toggler-icon:after,
@@ -233,9 +239,11 @@ nav.navbar .navbar-toggler-icon:before {
 	content: '';
 	z-index: 2;
 	transition: all 300ms linear;
+  border-radius: 3vh;
 }
 nav.navbar .navbar-toggler-icon:after {
 	top: 8px;
+  border-radius: 3vh;
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
 	transform: rotate(45deg);
@@ -246,9 +254,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 	transform: translateY(8px) rotate(-45deg);
 	background-color: #fff;
 	height: 2px;
+  border-radius: 3vh;
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
+  border-radius: 3vh;
 }
 /************ Banner Css ************/
 .banner {
@@ -385,9 +395,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 85%;
 }
 .project .nav.nav-pills {
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
-  border-radius: 50px;
+  border-radius: 3vh;
   background-color: rgb(255 255 255 / 10%);
   overflow: hidden;
 }
@@ -547,6 +557,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 0;
   position: relative;
   transition: 0.3s ease-in-out;
+  border-radius: 3vh;
 }
 .contact form button span {
   z-index: 1;
@@ -554,6 +565,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .contact form button:hover {
   color: #fff;
+  border-radius: 3vh;
 }
 .contact form button::before {
   content: "";
@@ -565,9 +577,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   left: 0;
   z-index: 0;
   transition: 0.3s ease-in-out;
+  border-radius: 3vh;
 }
 .contact form button:hover::before {
   width: 100%;
+  border-radius: 3vh;
 }
 
 /************ Footer Css ************/
@@ -589,6 +603,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   left: -1px;
   bottom: -1px;
   right: -1px;
+  border-radius: 3vh;
 }
 .new-email-bx::after {
   content: "";
@@ -600,6 +615,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   left: 0;
   bottom: 0;
   right: 0;
+  border-radius: 3vh;
 }
 .new-email-bx input {
   width: 100%;
@@ -618,7 +634,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 18px;
 }
 .footer img {
- 
   width: 26%;
 }
 .footer p {
@@ -645,8 +660,305 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   animation: updown 2s ease-in-out infinite; 
 }
 
+@media (max-width: 395px) {
+  * {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  /************ Navbar Css ************/
+  nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 0;
+    background-color: black;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    display: flex;
+    font-size: 15px;
+    padding: 0 15px;
+  }
 
-@media (max-width: 768px) {
+  /************ Banner Css ************/
+  .banner {
+    background-attachment: scroll; 
+    background-size: cover;
+    max-width: 100%;
+    padding: 180px 0 100px 0;
+    background-position: center;
+  }
+  .banner h1 {
+    margin-top: 3vh;
+    font-size: 40px;
+  }
+  .banner p {
+    font-size: 16px;
+  }
+  @keyframes orbiting {
+    0% {
+      transform: rotate(0deg) translateX(30px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(30px) rotate(-360deg);
+    }
+  }
+
+  .banner img {
+    animation: orbiting 15s linear infinite;
+    margin-top: 2vh;
+
+  }
+
+  /************ Skills Css ************/
+  .skill {
+    margin-top: 40vh;
+    width: 100%;
+    height: 65vh;
+    display: flex;
+  }
+  .skill h2 {
+    font-size: 35px;
+  }
+  .skill p {
+    font-size: 16px;
+  }
+  .skill-slider {
+    width: 100%;
+    position: relative;
+  }
+  .skill-slider .item img {
+    width: 30%;
+    margin: 0 auto 10px auto;
+  }
+  /************ Projects Css ************/
+  .project h2 {
+    font-size: 35px;
+  }
+  .project p {
+    color: #B8B8B8;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px auto 30px auto;
+    text-align: center;
+    width: 90%;
+  }
+  .project .nav.nav-pills {
+    width: 50%;
+  }
+
+  .proj-txtx h4 {
+    font-size: 3vh;
+  }
+  .proj-txtx span {
+    font-size: 12px;
+  }
+  .proj-imgbx {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    width: 106%; 
+    height: 350px; 
+  }
+  
+  .proj-imgbx img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+  }
+  /************ Footer Css ************/
+  .footer img {
+    width: 40%;
+  }
+
+  /************ Animations - Mobile Adjustments ************/
+  @keyframes orbiting {
+    0% {
+      transform: rotate(0deg) translateX(30px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(30px) rotate(-360deg);
+    }
+  }
+
+  .banner img {
+    animation: orbiting 15s linear infinite;
+  }
+
+  /************ Button Hover Effect ************/
+  .banner button svg,
+  .contact form button span {
+    transition: none; /* Remove hover effect for better performance */
+  }
+
+  /************ Projects Hover Effects ************/
+  .proj-imgbx::before {
+    transition: none; /* Reduce hover transition complexity */
+  }
+  .proj-imgbx:hover .proj-txtx {
+    transition: none; /* Remove transition for mobile */
+  }
+}
+
+@media (min-width: 396px) and (max-width: 465px) {
+  * {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  /************ Navbar Css ************/
+  nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 0;
+    background-color: black;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    display: flex;
+    font-size: 15px;
+    padding: 0 15px;
+  }
+
+  /************ Banner Css ************/
+  .banner {
+    background-attachment: scroll; /* Mobilde sabit arka plan yerine kaydırılabilir arka plan */
+    background-size: cover; /* Arka planın mobilde küçülmesini sağlar */
+    max-width: 100%;
+    padding: 180px 0 100px 0;
+    background-position: center;
+  }
+  .banner h1 {
+    margin-top: 3vh;
+    font-size: 40px;
+  }
+  .banner p {
+    font-size: 16px;
+  }
+  @keyframes orbiting {
+    0% {
+      transform: rotate(0deg) translateX(30px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(30px) rotate(-360deg);
+    }
+  }
+
+  .banner img {
+    animation: orbiting 15s linear infinite;
+    margin-top: 2vh;
+
+  }
+
+  /************ Skills Css ************/
+  .skill {
+    margin-top: 10vh;
+    width: 100%;
+    height: 65vh;
+    display: flex;
+  }
+  .skill h2 {
+    font-size: 35px;
+  }
+  .skill p {
+    font-size: 16px;
+  }
+  .skill-slider {
+    width: 100%;
+    position: relative;
+  }
+  .skill-slider .item img {
+    width: 30%;
+    margin: 0 auto 10px auto;
+  }
+  /************ Projects Css ************/
+  .project h2 {
+    font-size: 35px;
+  }
+  .project p {
+    color: #B8B8B8;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px auto 30px auto;
+    text-align: center;
+    width: 95%;
+  }
+  .project .nav.nav-pills {
+    width: 50%;
+  }
+
+  .proj-txtx h4 {
+    font-size: 3vh;
+  }
+  .proj-txtx span {
+    font-size: 12px;
+  }
+  .proj-imgbx {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    width: 106%; 
+    height: 350px; 
+  }
+  
+  .proj-imgbx img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+  }
+  /************ Footer Css ************/
+  .footer img {
+    width: 40%;
+  }
+
+  /************ Animations - Mobile Adjustments ************/
+  @keyframes orbiting {
+    0% {
+      transform: rotate(0deg) translateX(30px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(30px) rotate(-360deg);
+    }
+  }
+
+  .banner img {
+    animation: orbiting 15s linear infinite;
+  }
+
+  /************ Button Hover Effect ************/
+  .banner button svg,
+  .contact form button span {
+    transition: none; /* Remove hover effect for better performance */
+  }
+
+  /************ Projects Hover Effects ************/
+  .proj-imgbx::before {
+    transition: none; /* Reduce hover transition complexity */
+  }
+  .proj-imgbx:hover .proj-txtx {
+    transition: none; /* Remove transition for mobile */
+  }
+}
+
+
+
+@media (min-width: 467px) and (max-width: 768px) {
   * {
     margin: 0;
     padding: 0;
@@ -668,7 +980,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
   /************ Banner Css ************/
   .banner {
-
     background-attachment: scroll; /* Mobilde sabit arka plan yerine kaydırılabilir arka plan */
     background-size: cover; /* Arka planın mobilde küçülmesini sağlar */
     max-width: 100%;
@@ -776,20 +1087,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /************ Larger Screen Optimization ************/
-@media (min-width: 769px) and (max-width: 1024px) {
-  .banner h1 {
-    font-size: 50px;
+@media (min-width: 769px) and (max-width: 2240px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  .banner p {
-    font-size: 18px;
+  
+  .skill-slider .item img {
+    width: 30%;
+    margin: 0 auto 10px auto;
   }
-  .skill h2 {
-    font-size: 40px;
+  .skill-slider {
+    width: 100%;
+    position: relative;
   }
-  .project h2 {
-    font-size: 40px;
-  }
-  .proj-txtx h4 {
-    font-size: 28px;
+  .skill.item, p{
+    padding-right: 4vh;
   }
 }

@@ -13,9 +13,10 @@ export const Banner = () => {
   const [delta, setDelta] = useState(100);
   const [isInScrollRange, setIsInScrollRange] = useState(true);
   const toRotate = [
-    "Web Developer/Designer",
+    "Web Developer",
     "Social Media Manager",
     "UI/UX Designer",
+    "Web Designer"
   ];
   const period = 1500;
 
@@ -116,7 +117,7 @@ export const Banner = () => {
                       <span
                         className="txt-rotate"
                         dataPeriod="500"
-                        data-rotate='[ "Web Developer/Designer", "Social Media Manager", "UI/UX Designer" ]'
+                        data-rotate='[ "Web Developer", "Social Media Manager", "UI/UX Designer", "Web Designer" ]'
                         ref={txtRotateRef}
                       >
                         <span className="wrap" ref={wrapRef}>

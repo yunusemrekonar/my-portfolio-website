@@ -1,18 +1,23 @@
 import { useRef, useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+import { ArrowRightCircle } from "react-bootstrap-icons";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
+import { Helmet } from "react-helmet";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [delta, setDelta] = useState(100);
-  const [index, setIndex] = useState(1);
-  const [isInScrollRange, setIsInScrollRange] = useState(true); 
-  const toRotate = ["Web Developer", "Web Designer","Social Media Manager", "UI/UX Designer"];
+  const [isInScrollRange, setIsInScrollRange] = useState(true);
+  const toRotate = [
+    "Web Developer",
+    "Web Designer",
+    "Social Media Manager",
+    "UI/UX Designer",
+  ];
   const period = 1500;
 
   const txtRotateRef = useRef(null);
@@ -20,10 +25,10 @@ export const Banner = () => {
 
   useEffect(() => {
     if (txtRotateRef.current) {
-      txtRotateRef.current.style.color = '#ff5733';
+      txtRotateRef.current.style.color = "#ff5733";
     }
     if (wrapRef.current) {
-      wrapRef.current.style.color = '#7f00ff';
+      wrapRef.current.style.color = "#7f00ff";
     }
   }, []);
 
@@ -34,8 +39,8 @@ export const Banner = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -60,7 +65,7 @@ export const Banner = () => {
     if (!isDeleting && updatedText === currentText) {
       setIsDeleting(true);
       setDelta(period);
-    } else if (isDeleting && updatedText === '') {
+    } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setDelta(100);
@@ -68,44 +73,96 @@ export const Banner = () => {
   };
 
   const scrollToContact = () => {
-    const contactSection = document.getElementById('connect');
+    const contactSection = document.getElementById("connect");
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
     }
   };
 
   return (
-    <section className="banner" id="home">
-      <Container>
-        <Row className="align-items-center">
-          <Col xs={12} md={6} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div className={isVisible && isInScrollRange ? "animate__animated animate__fadeIn" : ""}>
-                  <h1>
-                    Hi! I'm Emre <br />
-                    <span className="txt-rotate" dataPeriod="500" data-rotate='[ "Web Developer", "Web Designer","Social Media Manager", "UI/UX Designer" ]' ref={txtRotateRef}>
-                      <span className="wrap" ref={wrapRef}>{text}</span>
-                    </span>
-                  </h1>
-                  <p>
-                  In today’s world, where the demand for digital solutions is ever-increasing, I’m Yunus Emre Konar, here to offer innovative solutions in web development, mobile application development, program development, and social media expertise. With my creative and user-friendly projects, I aim to strengthen your digital presence, streamline your business processes, and enhance your social media strategies. Whatever your goal may be, I’m here to provide tailored solutions to help elevate your success. Explore my website, and let’s bring your projects to life together!                  </p>
-                  <button onClick={scrollToContact}>Let’s Connect <ArrowRightCircle size={25} /></button>
-                </div>
-              )}
-            </TrackVisibility>
-          </Col>
-          <Col xs={12} md={6} xl={5}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div className={isVisible && isInScrollRange ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img" />
-                </div>
-              )}
-            </TrackVisibility>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+    <>
+      <Helmet>
+        <html lang="en" />
+        <title>Konar Works | Full Stack Developer Portfolio</title>
+        <meta
+          name="description"
+          content="Yunus Emre Konar's portfolio showcasing expertise in web development, mobile applications, UI/UX design, and social media strategies."
+        />
+        <meta name="author" content="Yunus Emre Konar" />
+        <meta
+          name="keywords"
+          content="Web Developer, Full Stack Developer, UI/UX Designer, Social Media Manager, Mobile Development, Yunus Emre Konar"
+        />
+        <link rel="canonical" href="https://yourwebsite.com" />
+      </Helmet>
+      <section className="banner" id="home">
+        <Container>
+          <Row className="align-items-center">
+            <Col xs={12} md={6} xl={7}>
+              <TrackVisibility>
+                {({ isVisible }) => (
+                  <div
+                    className={
+                      isVisible && isInScrollRange
+                        ? "animate__animated animate__fadeIn"
+                        : ""
+                    }
+                  >
+                    <h1>
+                      Hi! I'm Emre <br />
+                      <span
+                        className="txt-rotate"
+                        dataPeriod="500"
+                        data-rotate='[ "Web Developer", "Web Designer", "Social Media Manager", "UI/UX Designer" ]'
+                        ref={txtRotateRef}
+                      >
+                        <span className="wrap" ref={wrapRef}>
+                          {text}
+                        </span>
+                      </span>
+                    </h1>
+                    <p>
+                      In today’s world, where the demand for digital solutions
+                      is ever-increasing, I’m Yunus Emre Konar, here to offer
+                      innovative solutions in web development, mobile
+                      application development, program development, and social
+                      media expertise. With my creative and user-friendly
+                      projects, I aim to strengthen your digital presence,
+                      streamline your business processes, and enhance your
+                      social media strategies. Whatever your goal may be, I’m
+                      here to provide tailored solutions to help elevate your
+                      success. Explore my website, and let’s bring your
+                      projects to life together!
+                    </p>
+                    <button onClick={scrollToContact}>
+                      Let’s Connect <ArrowRightCircle size={25} />
+                    </button>
+                  </div>
+                )}
+              </TrackVisibility>
+            </Col>
+            <Col xs={12} md={6} xl={5}>
+              <TrackVisibility>
+                {({ isVisible }) => (
+                  <div
+                    className={
+                      isVisible && isInScrollRange
+                        ? "animate__animated animate__zoomIn"
+                        : ""
+                    }
+                  >
+                    <img src={headerImg} alt="Header Img" />
+                  </div>
+                )}
+              </TrackVisibility>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    </>
   );
 };

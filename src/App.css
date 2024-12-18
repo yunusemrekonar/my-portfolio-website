@@ -27,7 +27,6 @@ html {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 75px;
 }
 
 body {
@@ -236,8 +235,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
-  padding: 260px 0 100px 0;
-  background: url('./assets/img/banner-bg.png') no-repeat center center;
+  padding: 180px 0 200px 0;
+  background: url('./assets/img/banner-bg.png');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -297,7 +296,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner img {
-  animation: orbiting 10s linear infinite;
+  animation: orbiting 7s linear infinite;
 }
 
 /************ Skills Css ************/

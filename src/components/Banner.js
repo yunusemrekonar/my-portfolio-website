@@ -9,10 +9,10 @@ export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(100); // Hızı biraz daha yavaşlatıyoruz.
+  const [delta, setDelta] = useState(100); 
   const [index, setIndex] = useState(1);
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
-  const period = 1500; // Yazının tamamlanma süresi
+  const period = 1500; 
 
   useEffect(() => {
     const ticker = setInterval(() => tick(), delta);
@@ -29,16 +29,16 @@ export const Banner = () => {
     setText(updatedText);
 
     if (isDeleting) {
-      setDelta(80); // Silme işlemi hızlandırılabilir
+      setDelta(80); 
     }
 
     if (!isDeleting && updatedText === currentText) {
       setIsDeleting(true);
-      setDelta(period); // Yazı bitince biraz bekle
+      setDelta(period); 
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setDelta(100); // Yazı yazma hızını yeniden normalleştir
+      setDelta(100);
     }
   };
 
@@ -65,15 +65,7 @@ export const Banner = () => {
                     </span>
                   </h1>
                   <p>
-                    My passion for software development drives me to create impactful and innovative solutions that help users.
-                    With in-depth knowledge of both front-end and back-end technologies, I design and develop web applications
-                    and dynamic user interfaces. I am constantly exploring new technologies and enjoy integrating them into my projects.
-
-                    This portfolio website showcases the projects I’ve worked on and the skills I've developed. Each project reflects
-                    my commitment to delivering technical expertise and user-centered solutions. I am dedicated to building web
-                    applications that are both aesthetically pleasing and highly functional.
-
-                    Let's create amazing projects together!
+                  My passion for software development drives me to create innovative solutions that help users. With expertise in both front-end and back-end technologies, I design and develop web applications and dynamic user interfaces. This portfolio highlights the projects I've worked on, showcasing my commitment to delivering user-centered, functional solutions. Let's create amazing projects together!
                   </p>
                   <button onClick={scrollToContact}>Let’s Connect <ArrowRightCircle size={25} /></button>
                 </div>

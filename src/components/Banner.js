@@ -9,10 +9,10 @@ export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(150); // Hızlı yazma ve silme
+  const [delta, setDelta] = useState(150); 
   const [index, setIndex] = useState(1);
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
-  const period = 1500; // Kelime sonrası kısa bekleme süresi
+  const period = 1500; 
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -30,7 +30,7 @@ export const Banner = () => {
     setText(updatedText);
 
     if (isDeleting) {
-      setDelta(80); // Silme sırasında hız arttırılabilir
+      setDelta(80); 
     }
 
     if (!isDeleting && updatedText === fullText) {
@@ -55,7 +55,7 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
@@ -68,14 +68,19 @@ export const Banner = () => {
 
                     Let's create amazing projects together!</p>
                   <button onClick={scrollToContact}>Let’s Connect <ArrowRightCircle size={25} /></button>
-                </div>}
+                </div>
+              }
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img" />
+                  <img 
+                    src={headerImg} 
+                    alt="Header Img" 
+                    
+                  />
                 </div>}
             </TrackVisibility>
           </Col>

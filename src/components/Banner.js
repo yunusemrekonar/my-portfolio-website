@@ -9,47 +9,44 @@ export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(150); 
+  const [delta, setDelta] = useState(100); // Hızı biraz daha yavaşlatıyoruz.
   const [index, setIndex] = useState(1);
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
-  const period = 1500; 
+  const period = 1500; // Yazının tamamlanma süresi
 
   useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
+    const ticker = setInterval(() => tick(), delta);
 
-    return () => { clearInterval(ticker) };
-  }, [text]);
+    return () => clearInterval(ticker);
+  }, [text, delta]);
 
   const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+    const currentText = toRotate[loopNum % toRotate.length];
+    const updatedText = isDeleting
+      ? currentText.substring(0, text.length - 1)
+      : currentText.substring(0, text.length + 1);
 
     setText(updatedText);
 
     if (isDeleting) {
-      setDelta(80); 
+      setDelta(80); // Silme işlemi hızlandırılabilir
     }
 
-    if (!isDeleting && updatedText === fullText) {
+    if (!isDeleting && updatedText === currentText) {
       setIsDeleting(true);
-      setIndex(prevIndex => prevIndex - 1);
-      setDelta(period); 
+      setDelta(period); // Yazı bitince biraz bekle
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setIndex(1);
-      setDelta(150); 
-    } else {
-      setIndex(prevIndex => prevIndex + 1);
+      setDelta(100); // Yazı yazma hızını yeniden normalleştir
     }
   };
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('connect');
-    contactSection.scrollIntoView({ behavior: 'smooth' });
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
   };
 
   return (
@@ -58,30 +55,38 @@ export const Banner = () => {
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
-              {({ isVisible }) =>
+              {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
-                  <h1>{`Hi! I'm Emre `} <span className="txt-rotate" dataPeriod="500" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>My passion for software development drives me to create impactful and innovative solutions that help users. With in-depth knowledge of both front-end and back-end technologies, I design and develop web applications and dynamic user interfaces. I am constantly exploring new technologies and enjoy integrating them into my projects.
+                  <h1>
+                    Hi! I'm Emre{" "}
+                    <span className="txt-rotate" dataPeriod="500" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
+                      <span className="wrap">{text}</span>
+                    </span>
+                  </h1>
+                  <p>
+                    My passion for software development drives me to create impactful and innovative solutions that help users.
+                    With in-depth knowledge of both front-end and back-end technologies, I design and develop web applications
+                    and dynamic user interfaces. I am constantly exploring new technologies and enjoy integrating them into my projects.
 
-                    This portfolio website showcases the projects I’ve worked on and the skills I've developed. Each project reflects my commitment to delivering technical expertise and user-centered solutions. I am dedicated to building web applications that are both aesthetically pleasing and highly functional.
+                    This portfolio website showcases the projects I’ve worked on and the skills I've developed. Each project reflects
+                    my commitment to delivering technical expertise and user-centered solutions. I am dedicated to building web
+                    applications that are both aesthetically pleasing and highly functional.
 
-                    Let's create amazing projects together!</p>
+                    Let's create amazing projects together!
+                  </p>
                   <button onClick={scrollToContact}>Let’s Connect <ArrowRightCircle size={25} /></button>
                 </div>
-              }
+              )}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
-              {({ isVisible }) =>
+              {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img 
-                    src={headerImg} 
-                    alt="Header Img" 
-                    
-                  />
-                </div>}
+                  <img src={headerImg} alt="Header Img" />
+                </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>

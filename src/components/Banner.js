@@ -9,10 +9,10 @@ export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(150); 
+  const [delta, setDelta] = useState(150); // Hızlı yazma ve silme
   const [index, setIndex] = useState(1);
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
-  const period = 1500; 
+  const period = 1500; // Kelime sonrası kısa bekleme süresi
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -30,22 +30,28 @@ export const Banner = () => {
     setText(updatedText);
 
     if (isDeleting) {
-      setDelta(80); 
+      setDelta(80); // Silme sırasında hız arttırılabilir
     }
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
       setIndex(prevIndex => prevIndex - 1);
-      setDelta(period); 
+      setDelta(period); // Kelime bitince bekleme süresi
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
-      setDelta(150); 
+      setDelta(150); // Yazma hızını normale döndür
     } else {
       setIndex(prevIndex => prevIndex + 1);
     }
-  }
+  };
+
+  // Kaydırma fonksiyonu
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('connect');
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section className="banner" id="home">
@@ -62,7 +68,7 @@ export const Banner = () => {
                     This portfolio website showcases the projects I’ve worked on and the skills I've developed. Each project reflects my commitment to delivering technical expertise and user-centered solutions. I am dedicated to building web applications that are both aesthetically pleasing and highly functional.
 
                     Let's create amazing projects together!</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                  <button onClick={scrollToContact}>Let’s Connect <ArrowRightCircle size={25} /></button>
                 </div>}
             </TrackVisibility>
           </Col>
@@ -77,5 +83,5 @@ export const Banner = () => {
         </Row>
       </Container>
     </section>
-  )
-}
+  );
+};

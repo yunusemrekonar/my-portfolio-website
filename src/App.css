@@ -668,14 +668,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
   /************ Banner Css ************/
   .banner {
-    height: 120vh;
+
     background-attachment: scroll; /* Mobilde sabit arka plan yerine kaydırılabilir arka plan */
-    background-size: 150% auto; /* Arka planın mobilde küçülmesini sağlar */
+    background-size: cover; /* Arka planın mobilde küçülmesini sağlar */
     max-width: 100%;
     padding: 180px 0 100px 0;
     background-position: center;
   }
   .banner h1 {
+    margin-top: 3vh;
     font-size: 40px;
   }
   .banner p {

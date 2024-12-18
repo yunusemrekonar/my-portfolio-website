@@ -36,18 +36,17 @@ export const Banner = () => {
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
       setIndex(prevIndex => prevIndex - 1);
-      setDelta(period); // Kelime bitince bekleme süresi
+      setDelta(period); 
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
-      setDelta(150); // Yazma hızını normale döndür
+      setDelta(150); 
     } else {
       setIndex(prevIndex => prevIndex + 1);
     }
   };
 
-  // Kaydırma fonksiyonu
   const scrollToContact = () => {
     const contactSection = document.getElementById('connect');
     contactSection.scrollIntoView({ behavior: 'smooth' });

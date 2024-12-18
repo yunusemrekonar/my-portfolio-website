@@ -1,7 +1,9 @@
-import meter1 from "../assets/img/meter1.png";
-import meter2 from "../assets/img/meter2.png";
-import meter3 from "../assets/img/meter3.png";
-import meter4 from "../assets/img/meter4.png";
+import logodesign from "../assets/img/logodesign.svg";
+import web from "../assets/img/web.svg";
+import socialmedia from "../assets/img/socialmedia.svg";
+import mobileapp from "../assets/img/mobileapp.svg";
+import ui from "../assets/img/ui.svg";
+import brand from "../assets/img/brand.svg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/img/color-sharp.png"
@@ -35,20 +37,34 @@ export const Skills = () => {
                         <h2>Services</h2>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={web} alt="Image" />
                                 <h5>Web Development</h5>
+                                <p>I create innovative and user-friendly websites to help you establish a strong digital presence.</p>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Image" />
+                                <img src={socialmedia} alt="Image" />
                                 <h5>Social Media Management</h5>
+                                <p>I help position your brand effectively on social media platforms, reaching your target audience with the right strategies.</p>
                             </div>
                             <div className="item">
-                                <img src={meter4} alt="Image" />
+                                <img src={logodesign} alt="Image" />
                                 <h5>Logo Design</h5>
+                                <p>I design striking and memorable logos that perfectly capture your brand's essence and vision.</p>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image" />
+                                <img src={brand} alt="Image" />
                                 <h5>Brand Identity</h5>
+                                <p>I build a unique and powerful brand identity that reflects your brand’s values and message.</p>
+                            </div>
+                            <div className="item">
+                                <img src={ui} alt="Image" />
+                                <h5>UI/UX Design</h5>
+                                <p>I design intuitive and aesthetically pleasing interfaces that enhance user experience and engagement.</p>
+                            </div>
+                            <div className="item">
+                                <img src={mobileapp} alt="Image" />
+                                <h5>Mobile App Development</h5>
+                                <p>I develop user-friendly, high-performance mobile applications for both Android and iOS platforms.</p>
                             </div>
                         </Carousel>
                     </div>

@@ -12,7 +12,7 @@ export const Banner = () => {
   const [delta, setDelta] = useState(100);
   const [index, setIndex] = useState(1);
   const [isInScrollRange, setIsInScrollRange] = useState(true); 
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+  const toRotate = ["Web Developer", "Web Designer","Social Media Manager", "UI/UX Designer"];
   const period = 1500;
 
   const txtRotateRef = useRef(null);
@@ -82,16 +82,14 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) => (
                 <div className={isVisible && isInScrollRange ? "animate__animated animate__fadeIn" : ""}>
-                  <span className="tagline">Welcome to my Portfolio</span>
                   <h1>
                     Hi! I'm Emre <br />
-                    <span className="txt-rotate" dataPeriod="500" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]' ref={txtRotateRef}>
+                    <span className="txt-rotate" dataPeriod="500" data-rotate='[ "Web Developer", "Web Designer","Social Media Manager", "UI/UX Designer" ]' ref={txtRotateRef}>
                       <span className="wrap" ref={wrapRef}>{text}</span>
                     </span>
                   </h1>
                   <p>
-                    My passion for software development drives me to create innovative solutions that help users. With expertise in both front-end and back-end technologies, I design and develop web applications and dynamic user interfaces. This portfolio highlights the projects I've worked on, showcasing my commitment to delivering user-centered, functional solutions. Let's create amazing projects together!
-                  </p>
+                  In today’s world, where the demand for digital solutions is ever-increasing, I’m Yunus Emre Konar, here to offer innovative solutions in web development, mobile application development, program development, and social media expertise. With my creative and user-friendly projects, I aim to strengthen your digital presence, streamline your business processes, and enhance your social media strategies. Whatever your goal may be, I’m here to provide tailored solutions to help elevate your success. Explore my website, and let’s bring your projects to life together!                  </p>
                   <button onClick={scrollToContact}>Let’s Connect <ArrowRightCircle size={25} /></button>
                 </div>
               )}

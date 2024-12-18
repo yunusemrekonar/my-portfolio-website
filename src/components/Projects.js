@@ -27,12 +27,14 @@ export const Projects = () => {
     <section className="project" id="projects">
       <Container>
         <Row>
-          <Col size={12}>
+          <Row size={20}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
+              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <h2>Projects</h2>
-                <p>I am constantly exploring new ideas and pushing the boundaries of what can be achieved with full stack development. Below, you’ll find a selection of the projects I’ve worked on, demonstrating my expertise in both frontend and backend development. If you have an exciting project in mind or need assistance bringing your ideas to life, feel free to reach out. Let’s collaborate and make something amazing together!</p>
+                <p>
+                By combining creativity and innovation, I strive for excellence in every project I undertake. Here, you can explore the projects I have worked on and successfully completed. Each project is not just a task, but an opportunity for new experiences and learning. From web development and mobile applications to software solutions, each project has its own unique challenges, and I’ve delivered the best solutions for each one. These projects reflect my professional skills and my passion for technology. Take a look, get inspired, and see how I can contribute to your future projects!               
+                </p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
@@ -45,11 +47,11 @@ export const Projects = () => {
                         {
                           projects.map((project, index) => {
                             return (
-                              <a key={index} href={project.link} target="_blank" rel="noopener noreferrer">
-                                <ProjectCard
-                                  {...project}
-                                />
-                              </a>
+                              <Col md={6} key={index} className="mb-4">
+                                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                  <ProjectCard {...project} />
+                                </a>
+                              </Col>
                             )
                           })
                         }
@@ -59,7 +61,7 @@ export const Projects = () => {
                 </Tab.Container>
               </div>}
             </TrackVisibility>
-          </Col>
+          </Row>
         </Row>
       </Container>
       <img className="background-image-right" src={colorSharp2} alt="background"/>

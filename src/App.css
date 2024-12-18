@@ -611,3 +611,102 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact img {
   animation: updown 2s ease-in-out infinite; 
 }
+
+
+@media (max-width: 768px) {
+  /************ Navbar Css ************/
+  nav.navbar {
+    padding: 5px 0;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  /************ Banner Css ************/
+  .banner {
+    padding: 180px 0 60px 0;
+    background-position: center;
+  }
+  .banner h1 {
+    font-size: 40px;
+  }
+  .banner p {
+    font-size: 16px;
+  }
+
+  /************ Skills Css ************/
+  .skill h2 {
+    font-size: 35px;
+  }
+  .skill p {
+    font-size: 16px;
+  }
+
+  /************ Projects Css ************/
+  .project h2 {
+    font-size: 35px;
+  }
+  .project p {
+    font-size: 16px;
+  }
+
+  .proj-txtx h4 {
+    font-size: 25px;
+  }
+  .proj-txtx span {
+    font-size: 12px;
+  }
+
+  /************ Footer Css ************/
+  .footer img {
+    width: 40%;
+  }
+
+  /************ Animations - Mobile Adjustments ************/
+  @keyframes orbiting {
+    0% {
+      transform: rotate(0deg) translateX(30px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(30px) rotate(-360deg);
+    }
+  }
+
+  .banner img {
+    animation: orbiting 15s linear infinite;
+  }
+
+  /************ Button Hover Effect ************/
+  .banner button svg,
+  .contact form button span {
+    transition: none; /* Remove hover effect for better performance */
+  }
+
+  /************ Projects Hover Effects ************/
+  .proj-imgbx::before {
+    transition: none; /* Reduce hover transition complexity */
+  }
+  .proj-imgbx:hover .proj-txtx {
+    transition: none; /* Remove transition for mobile */
+  }
+}
+
+/************ Larger Screen Optimization ************/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .banner h1 {
+    font-size: 50px;
+  }
+  .banner p {
+    font-size: 18px;
+  }
+  .skill h2 {
+    font-size: 40px;
+  }
+  .project h2 {
+    font-size: 40px;
+  }
+  .proj-txtx h4 {
+    font-size: 28px;
+  }
+}

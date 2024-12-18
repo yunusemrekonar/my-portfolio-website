@@ -34,7 +34,7 @@ export const MyNavbar = () => {
     <>
       <Helmet>
         <html lang="en" />
-        <title>Yunus Emre Konar | Web Developer Portfolio</title>
+        <title>Konar Works</title>
         <meta
           name="description"
           content="Explore the portfolio of Yunus Emre Konar, a web developer specializing in front-end and back-end development, along with projects in web design and social media management."

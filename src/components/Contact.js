@@ -62,7 +62,7 @@ export const Contact = () => {
     <>
       <Helmet>
         <html lang="en" />
-        <title>Contact | Yunus Emre Konar</title>
+        <title>Konar Works</title>
         <meta
           name="description"
           content="Get in touch with Yunus Emre Konar for innovative solutions in web development, mobile applications, and more. Reach out for tailored solutions."

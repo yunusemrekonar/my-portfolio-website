@@ -28,7 +28,7 @@ export const Projects = () => {
     <>
       <Helmet>
         <html lang="en" />
-        <title>Yunus Emre Konar | Projects</title>
+        <title>Konar Works</title>
         <meta
           name="description"
           content="Explore the projects of Yunus Emre Konar, showcasing expertise in web development, software solutions, and mobile applications. See how creativity meets technology in every project."

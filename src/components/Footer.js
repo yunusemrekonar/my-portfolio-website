@@ -10,7 +10,7 @@ export const Footer = () => {
     <>
       <Helmet>
         <html lang="en" />
-        <title>Footer | Yunus Emre Konar</title>
+        <title>Konar Works</title>
         <meta
           name="description"
           content="Connect with Yunus Emre Konar through social media and explore the portfolio showcasing web development, design, and more."

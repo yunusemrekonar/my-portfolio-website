@@ -86,7 +86,7 @@ export const Banner = () => {
     <>
       <Helmet>
         <html lang="en" />
-        <title>Konar Works | Full Stack Developer Portfolio</title>
+        <title>Konar Works</title>
         <meta
           name="description"
           content="Yunus Emre Konar's portfolio showcasing expertise in web development, mobile applications, UI/UX design, and social media strategies."

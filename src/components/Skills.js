@@ -33,7 +33,7 @@ export const Skills = () => {
     <>
       <Helmet>
         <html lang="en" />
-        <title>Yunus Emre Konar | Skills & Services</title>
+        <title>Konar Works</title>
         <meta
           name="description"
           content="Explore the services and skills offered by Yunus Emre Konar, including web development, UI/UX design, mobile app development, and brand identity."

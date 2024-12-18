@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -9,20 +9,32 @@ export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(100); 
+  const [delta, setDelta] = useState(100);
   const [index, setIndex] = useState(1);
-  const [isInScrollRange, setIsInScrollRange] = useState(false); 
+  const [isInScrollRange, setIsInScrollRange] = useState(true); // Varsayılan olarak true
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
-  const period = 1500; 
+  const period = 1500;
 
+  // Elemanlar için refs oluşturuyoruz
+  const txtRotateRef = useRef(null);
+  const wrapRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY; 
-      const triggerHeight = 200; 
-      setIsInScrollRange(scrollY <= triggerHeight);
-    };
+    if (txtRotateRef.current) {
+      txtRotateRef.current.style.color = '#ff5733';
+    }
+    if (wrapRef.current) {
+      wrapRef.current.style.color = '#7f00ff';
+    }
+  }, []);
 
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const triggerHeight = 200;
+    setIsInScrollRange(scrollY <= triggerHeight);
+  };
+
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -43,12 +55,12 @@ export const Banner = () => {
     setText(updatedText);
 
     if (isDeleting) {
-      setDelta(80); 
+      setDelta(80);
     }
 
     if (!isDeleting && updatedText === currentText) {
       setIsDeleting(true);
-      setDelta(period); 
+      setDelta(period);
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
@@ -73,13 +85,13 @@ export const Banner = () => {
                 <div className={isVisible && isInScrollRange ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>
-                    Hi! I'm Emre{" "}
-                    <span className="txt-rotate" dataPeriod="500" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
-                      <span className="wrap">{text}</span>
+                    Hi! I'm Emre <br />
+                    <span className="txt-rotate" dataPeriod="500" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]' ref={txtRotateRef}>
+                      <span className="wrap" ref={wrapRef}>{text}</span>
                     </span>
                   </h1>
                   <p>
-                  My passion for software development drives me to create innovative solutions that help users. With expertise in both front-end and back-end technologies, I design and develop web applications and dynamic user interfaces. This portfolio highlights the projects I've worked on, showcasing my commitment to delivering user-centered, functional solutions. Let's create amazing projects together!
+                    My passion for software development drives me to create innovative solutions that help users. With expertise in both front-end and back-end technologies, I design and develop web applications and dynamic user interfaces. This portfolio highlights the projects I've worked on, showcasing my commitment to delivering user-centered, functional solutions. Let's create amazing projects together!
                   </p>
                   <button onClick={scrollToContact}>Let’s Connect <ArrowRightCircle size={25} /></button>
                 </div>
